@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAFFLESIA GO</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: linear-gradient(to bottom right, #D62828, #1abc9c);
+      color: #333;
+    }header {
+  padding: 20px;
+}
+
+h1 {
+  color: #D62828;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.intro {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  width: 80%;
+  max-width: 400px;
+}
+
+.ride {
+  background-color: #4CAF50;
+}
+
+.car {
+  background-color: #2196F3;
+}
+
+.food {
+  background-color: #FF9800;
+}
+
+.delivery {
+  background-color: #9C27B0;
+}
+
+.payment {
+  background-color: #222;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #444444;
+  padding-bottom: 30px;
+}
+
+  </style>
+</head><body>
+  <header>
+    <h1>🛺 RAFFLESIA GO</h1>
+    <p class="intro">Selamat datang di layanan transportasi & pengantaran lokal Bengkulu!</p>
+  </header>  <div class="button-container">
+    <a href="https://api.whatsapp.com/send?phone=6281310766517&text=Halo%20Admin%20RAFFLESIA%20GO%2C%20saya%20ingin%20pesan%20RAGO%20RIDE" class="btn ride" target="_blank">🛵 RAGO RIDE (Motor)</a><a href="https://api.whatsapp.com/send?phone=6281310766517&text=Halo%20Admin%20RAFFLESIA%20GO%2C%20saya%20ingin%20pesan%20RAGO%20CAR%20(Ojek%20Mobil)" class="btn car" target="_blank">🚗 RAGO CAR (Mobil)</a>
+
+<a href="https://api.whatsapp.com/send?phone=6281310766517&text=Halo%20Admin%20RAFFLESIA%20GO%2C%20saya%20ingin%20pesan%20RAGO%20F%26B%20(Makanan%20dan%20Minuman)" class="btn food" target="_blank">🍔 RAGO F&B (Makanan)</a>
+
+<a href="https://api.whatsapp.com/send?phone=6281310766517&text=Halo%20Admin%20RAFFLESIA%20GO%2C%20saya%20ingin%20kirim%20paket%20dengan%20RAGO%20KIRIM" class="btn delivery" target="_blank">📦 RAGO KIRIM (Paket)</a>
+
+<a href="#" onclick="startPiPayment()" class="btn payment">💰 Bayar dengan Pi</a>
+
+  </div>  <footer>
+    <p>🌐 Powered by RAFFLESIA GO – Bengkulu Local Innovation<br>
+      📞 Kontak Admin: 081310766517<br>
+      📸 Instagram: @rafflesiagoofficial
+    </p>
+  </footer>  <script src="https://sdk.minepi.com/pi-sdk.js"></script>  <script>
+    async function startPiPayment() {
+      const scopes = ['payments'];
+      const appId = 'rafflesiago';
+
+      try {
+        const paymentData = {
+          amount: 0.1,
+          memo: "Pembayaran layanan RAFFLESIA GO",
+          metadata: { type: "ojek" }
+        };
+
+        Pi.init({ version: "2.0", sandbox: false });
+        const payment = await Pi.createPayment(paymentData);
+        console.log("Transaksi berhasil:", payment);
+      } catch (error) {
+        console.error("Transaksi gagal:", error);
+      }
+    }
+  </script></body></html>Add main website file
